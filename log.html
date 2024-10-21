@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Slide Navbar</title>
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="./public/javascripts/script.js" defer></script>
+</head>
+
+<body>
+    <nav class="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <a href="index.html" class="logo">PorscheLUX</a>
+        <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li><a href="index.html">Acasa</a></li>
+            <li><a href="infodealer.html">InfoDealer</a></li>
+            <li><a href="market.html">Masini</a></li>
+            <li><a href="#">Servicii</a></li>
+            <li><a href="event.html">Evenimente</a></li>
+            <li><a href="log.html" class="log">LogIn</a></li>
+        </ul>
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" placeholder="Search here..." />
+        </div>
+    </nav>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form>
+                <label class="sign" for="chk" aria-hidden="true">Sign up</label>
+                <input class="inpm" type="text" name="txt" placeholder="User name" required="">
+                <input class="inpm" type="email" name="email" placeholder="Email" required="">
+                <input class="inpm" type="password" name="pswd" placeholder="Password" required="">
+                <button>Sign up</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label class="logare" for="chk" aria-hidden="true">Login</label>
+                <input class="inpm" type="email" name="email" placeholder="Email" required="">
+                <input class="inpm" type="password" name="pswd" placeholder="Password" required="">
+                <button>Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

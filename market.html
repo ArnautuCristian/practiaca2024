@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PorscheLUX</title>
+        <link rel="stylesheet" href="./public/stylesheets/style.css" />
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="./public/javascripts/script.js" defer></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+</head>
+
+<body>
+    <nav class="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <a href="index.html" class="logo">PorscheLUX</a>
+        <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li><a href="index.html">Acasa</a></li>
+            <li><a href="infodealer.html">InfoDealer</a></li>
+            <li><a href="#">Masini</a></li>
+            <li><a href="sevicii.html">Servicii</a></li>
+            <li><a href="event.html">Evenimente</a></li>
+            <li><a href="log.html" class="log">LogIn</a></li>
+        </ul>
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" placeholder="Search here..." />
+        </div>
+    </nav>
+    <div class="place">
+        <div class="filter">
+            <label for="checkbox">Alege modelele dorite</label>
+            <span>
+                <input type="checkbox" name="checkbox" id="checkbox">-Porsche 911<br>
+                <input type="checkbox" name="checkbox" id="checkbox">-Porsche Cayenne<br>
+                <input type="checkbox" name="checkbox" id="checkbox">-Porsche Macan<br>
+                <input type="checkbox" name="checkbox" id="checkbox">-Porsche Panamera<br>
+                <input type="checkbox" name="checkbox" id="checkbox">-Porsche Taycan<br>
+                <input type="checkbox" name="checkbox" id="checkbox">-Porsche Boxster<br>
+                <input type="checkbox" name="checkbox" id="checkbox">-Porsche Cayman<br>
+            </span>
+        </div>
+        <div class="search">
+            <h1>Market Place</h1>
+            <a class="add" href="addcar.html">Add Car</a>
+        </div>
+        <div class="carscontainer">
+            <div id="show-car" class="carscard">
+            </div>
+
+        </div>
+    </div>
+    <script type="module">
+        fetch("cars.json")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (cars) {
+                let placeholder = document.querySelector("#show-car");
+                let out = "";
+                for (let car of cars) {
+                    out += `
+                    <div class="car">
+                    <img src="${car.img}"> </img>
+                    <div class="date">
+                        <h2>${car.name}</h2>
+                    <h4>Anul ${car.anul}</h4>
+                    <h4>Pretul ${car.price}$</h4>
+                        </div>
+                    
+                        </div>
+                    
+                `;
+                }
+
+                placeholder.innerHTML = out;
+            })
+    </script>
+</body>
+
+</html>
